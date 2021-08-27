@@ -12,18 +12,18 @@ async function timeShipHandler(req, res) {
     const { city, year, price } = req.query;
     // Create a Stripe checkout session
     // Copy
-    // const session = await stripe.checkout.sessions.create({
-    //     success_url: 'https://example.com/success',
-    //     cancel_url: 'https://example.com/cancel',
-    //     payment_method_types: ['card'],
-    //     line_items: [
+    const session = await stripe.checkout.sessions.create({
+        success_url: 'https://example.com/success',
+        cancel_url: 'https://example.com/cancel',
+        payment_method_types: ['card'],
+        line_items: [
 
-    //         {price: 'price_H5ggYwtDq4fbrJ', quantity: 2},
+            {price: 'price_H5ggYwtDq4fbrJ', quantity: 2},
 
-    //     ],
-    //     mode: 'payment',
-    //   });
-    //   // Get the url to send back to Ruby's TimeShip
+        ],
+        mode: 'payment',
+      });
+      // Get the url to send back to Ruby's TimeShip
       // Give the data to res-the-cat 😺 and
       // then the TimeShip is on a test trip! With you inside it!
       res.status(200).json({
