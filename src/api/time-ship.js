@@ -13,13 +13,14 @@ async function timeShipHandler(req, res) {
     // Create a Stripe checkout session
     // Copy / paste from stripe docs node.js thing
     const session = await stripe.checkout.sessions.create({
-        success_url: 'https://example.com/success',
-        cancel_url: 'https://example.com/cancel',
+        success_url: 'https://timeship.gatsbyjs.io/success',
+        cancel_url: 'https://timeship.gatsbyjs.io/cancel',
         payment_method_types: ['card'],
         line_items: [
 
             {
                 quantity: 1,
+                // price data object in stripe docs
                 price_data: {
                     unit_amount: req.query.price * 100,
                     currency: "usd",
