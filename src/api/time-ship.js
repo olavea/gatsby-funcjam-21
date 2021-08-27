@@ -5,7 +5,7 @@ const PiRATE_PRiNCESS = {
     skill: "gatsby_function_programming"
 }
 // STRIPE_KEY
-//const stripe = require('stripe')(process.env.STRIPE_KEY);
+const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 async function timeShipHandler(req, res) {
     // Get the data from the query of req-the-bat 🦇
@@ -18,7 +18,15 @@ async function timeShipHandler(req, res) {
         payment_method_types: ['card'],
         line_items: [
 
-            {price: 'price_H5ggYwtDq4fbrJ', quantity: 2},
+            {
+                quantity: 1,
+                price_data: {
+                    unit_amount: req.query.price * 100,
+                    currency: "usd",
+                    product: "prod_K7EsOmDy6JLRgx",
+                }
+            },
+
 
         ],
         mode: 'payment',
