@@ -5,24 +5,24 @@ const PiRATE_PRiNCESS = {
     skill: "gatsby_function_programming"
 }
 // STRIPE_KEY
-//const stripe = require('stripe')(process.env.STRIPE_KEY);
+const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 async function timeShipHandler(req, res) {
     // Get the data from the query of req-the-bat 🦇
     const { city, year, price } = req.query;
     // Create a Stripe checkout session
-    // Copy
-    // const session = await stripe.checkout.sessions.create({
-    //     success_url: 'https://example.com/success',
-    //     cancel_url: 'https://example.com/cancel',
-    //     payment_method_types: ['card'],
-    //     line_items: [
+    // Copy / paste from stripe docs node.js thing
+    const session = await stripe.checkout.sessions.create({
+        success_url: 'https://example.com/success',
+        cancel_url: 'https://example.com/cancel',
+        payment_method_types: ['card'],
+        line_items: [
 
-    //         {price: 'price_H5ggYwtDq4fbrJ', quantity: 2},
+            {price: 'price_H5ggYwtDq4fbrJ', quantity: 2},
 
-    //     ],
-    //     mode: 'payment',
-    //   });
+        ],
+        mode: 'payment',
+      });
     //   // Get the url to send back to Ruby's TimeShip
       // Give the data to res-the-cat 😺 and
       // then the TimeShip is on a test trip! With you inside it!
