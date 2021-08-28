@@ -35,8 +35,10 @@ async function timeShipHandler(req, res) {
     //   // Get the url to send back to Ruby's TimeShip
       // Give the data to res-the-cat 😺 and
       // then the TimeShip is on a test trip! With you inside it!
+      //urlTimeShip: session.url,
       res.status(200).json({
-        message: `You time travelled to the city of ${city}, in year ${year} and burned ${price} cents in gold fuel. To go back home, build your own serverless Gatsby function TimeShip with the help of a Pirate`,
+
+        message: `Copy this url into a new browsertab ${session.url} You time travelled to the city of ${city}, in year ${year} and burned ${price} cents in gold fuel. To go back home, build your own serverless Gatsby function TimeShip with the help of a Pirate`,
         princess: PiRATE_PRiNCESS
     });
 }
