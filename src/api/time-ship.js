@@ -38,8 +38,18 @@ async function timeShipHandler(req, res) {
       //urlTimeShip: session.url,
       res.status(200).json({
 
-        message: `Copy this url into a new browsertab ${session.url} You time travelled to the city of ${city}, in year ${year} and burned ${price} cents in gold fuel. To go back home, build your own serverless Gatsby function TimeShip with the help of a Pirate`,
-        princess: PiRATE_PRiNCESS
+        message: `Copy this url into a new browsertab
+        ${session.url}
+        type in Card info:
+        4242 4242 4242 4242
+        and then MM / YY CVC
+        12 34 567
+        and then Name
+        Ruby Reckless
+        and then
+        Click Pay $${price}
+        `,
+
     });
 }
 
