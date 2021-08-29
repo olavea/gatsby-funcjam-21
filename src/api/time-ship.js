@@ -17,15 +17,14 @@ async function timeShipHandler(req, res) {
         cancel_url: 'https://timeship.gatsbyjs.io/cancel',
         payment_method_types: ['card'],
         line_items: [
-
             {
-                quantity: 1,
                 // price data object in stripe docs
                 price_data: {
                     unit_amount: req.query.price * 100,
                     currency: "usd",
                     product: "prod_K7EsOmDy6JLRgx",
-                }
+                },
+                quantity: 1,
             },
 
 
@@ -38,17 +37,7 @@ async function timeShipHandler(req, res) {
       //urlTimeShip: session.url,
       res.status(200).json({
 
-        message: `Copy this url into a new browsertab
-        ${session.url}
-        type in Card info:
-        4242 4242 4242 4242
-        and then MM / YY CVC
-        12 34 567
-        and then Name
-        Ruby Reckless
-        and then
-        Click Pay $${price}
-        `,
+        message: `Copy this url into the browser, to test-pay $${price} for TimeShip gold-fuel ( 🏴‍☠️😺👍 $${price} are free-test-$s). ${session.url}`,
 
     });
 }

@@ -1,81 +1,56 @@
-import React from "react"
-import { useForm } from "react-hook-form"
+import React from 'react'
 
-export default function App() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm()
-  const onSubmit = data => {
-    fetch(`/api/form`, {
-      method: `POST`,
-      body: JSON.stringify(data),
-      headers: {
-        "content-type": `application/json`,
-      },
-    })
-      .then(res => res.json())
-      .then(body => {
-        console.log(`response from API:`, body)
-      })
-  }
-
-  console.log({ errors })
-
+const RubysTimeShipPage = () => {
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      style={{ display: `block`, width: 400 }}
-    >
-      <label htmlFor="first-name">First name</label>
-      <input
-        id="first-name"
-        type="text"
-        style={{ display: `block`, marginBottom: 16 }}
-        {...register("First name", { required: true, maxLength: 80 })}
-      />
+    <main>
+      <header>
+        <h1>Ruby's TimeShip</h1>
+        <h2>by Lillian (6 🏴‍☠️👸 )</h2>
+      </header>
+      <p>and Ola Vea (43 🏴‍☠️😺 )</p>
+      <h2>Ruby's TimeShip</h2>
+      <p>
+        Is a serverless Gatsby function fueled by gold.
+        Ruby built her TimeShip in 1554 so she can go to the future and find The Pirate Princess Lilly (11 🏴‍☠️👸 ). Lilly will help save Ruby's sister, Princess Lizabeth from prison in the Tower of London back in 1554.
+        You can help in The Jailbreak by donating time, talent or treasure. Each time travel trip will cost you $XXX in gold-fuel. ( 🏴‍☠️😺👍 $XXX are free-test-$s)
+      </p>
+      <h2>Take a TimeShip Test Trip</h2>
+      <ul>
+        <li>
+          <a href="/api/time-ship?city=oslo&year=2026&price=333">
+            /api/time-ship?city=oslo&year=2026&price=333
+          </a>
+        </li>
+        <li>
+        <a href="/api/time-ship?city=London&year=1554&price=333">
+          /api/time-ship?city=London&year=1554&price=333
+        </a>
+      </li>
+      <li>
+      <a href="/api/time-ship?city=London&year=1554&price=333">
+        /api/time-ship?city= _ _ _ _ &year= _ _ _ _&price=333
+      </a>
+    </li>
+      </ul>
+      <h2>Build Your Own Gatsby Function TimeShip</h2>
+      <p>Clone the code of Ruby's TimeShip and get started:</p>
 
-      <label htmlFor="last-name">Last name</label>
-      <input
-        id="last-name"
-        type="text"
-        style={{ display: `block`, marginBottom: 16 }}
-        {...register("Last name", { required: true, maxLength: 100 })}
-      />
+      <ul>
+        <li>
+          <a href="https://github.com/lillian-raae-vea/go-gatsby-funcjam-21">https://github.com/lillian-raae-vea/go-gatsby-funcjam-21</a>
+        </li>
+      </ul>
+      <h2>Or Bring Your Own Idea to a Gatsby Function</h2>
+      <p>Fabulous prizes await the winners, .... </p>
 
-      <label htmlFor="email">Email</label>
-      <input
-        id="email"
-        type="text"
-        style={{ display: `block`, marginBottom: 16 }}
-        {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
-      />
+      <ul>
+        <li>
+          <a href="https://www.gatsbyjs.com/func-jam-21/">like an M1 Mac Miniiiiii....</a>
+        </li>
+      </ul>
 
-      <label htmlFor="tel">Mobile number</label>
-      <input
-        id="tel"
-        type="tel"
-        style={{ display: `block`, marginBottom: 16 }}
-        {...register("Mobile number", {
-          required: true,
-          minLength: 6,
-          maxLength: 12,
-        })}
-      />
-
-      <label htmlFor="title">Title</label>
-      <select
-        {...register("Title", { required: true })}
-        style={{ display: `block`, marginBottom: 16 }}
-      >
-        <option value="Mr">Mr</option>
-        <option value="Mrs">Mrs</option>
-        <option value="Miss">Miss</option>
-        <option value="Dr">Dr</option>
-      </select>
-
-      <input type="submit" />
-    </form>
+    </main>
   )
 }
+
+export default RubysTimeShipPage
