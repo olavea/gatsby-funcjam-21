@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const CPage = () => {
     return (
         <main>
-            <p>Queen murderous Mary wolfy backend engineers got you, you are going to jail in the Tower of London.</p>
+            <p>Gotcha! Your test payment got canceled! Queen murderous Mary's wolfy backend engineers got you. You are spending jailtime in the Tower of London. Mo-Ha-Ha-Ha!</p>
         </main>
 
     )

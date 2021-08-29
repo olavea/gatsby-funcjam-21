@@ -13,7 +13,7 @@ async function timeShipHandler(req, res) {
     // Create a Stripe checkout session
     // Copy / paste from stripe docs node.js thing
     const session = await stripe.checkout.sessions.create({
-        success_url: 'https://timeship.gatsbyjs.io/success',
+        success_url: `https://timeship.gatsbyjs.io/api/time-ship-landing-in?city=${city}&year=${year}&price=333${price}`,
         cancel_url: 'https://timeship.gatsbyjs.io/cancel',
         payment_method_types: ['card'],
         line_items: [
