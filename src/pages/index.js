@@ -11,8 +11,8 @@ const RubysTimeShipPage = () => {
       <h2>Ruby's TimeShip</h2>
       <p>
         Is a serverless Gatsby function fueled by gold.
-        Ruby built her TimeShip in 1554 so she can go to the future and find The Pirate Princess Lilly (11 <span role="img" aria-label="pirate flag">🏴‍☠️</span><span role="img" aria-label="pirate princess">👸</span> ). Lilly will help save Ruby's sister, Princess Lizabeth from prison in the Tower of London back in 1554.
-        You can help in The Jailbreak by donating time, talent or treasure. Each time travel trip will cost you $XXX in gold-fuel. ( <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="smiley cat">😺</span> <span role="img" aria-label="thumbs up">👍</span> $XXX are free-test-$s)
+        Ruby Reckless built her TimeShip in 1554. So she can go to the future and find The Pirate Princess Lilly (11 <span role="img" aria-label="pirate flag">🏴‍☠️</span><span role="img" aria-label="pirate princess">👸</span> ). Lilly will help save Ruby's sister, Princess Lizabeth from prison in the Tower of London back in 1554.
+        You can help in The Tower Jailbreak by donating time, talent or treasure. Each time travel trip will cost you $XXX in gold-fuel. ( <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="smiley cat">😺</span> <span role="img" aria-label="thumbs up">👍</span> $XXX are free-test-$s). Use your best email to get Ruby's TimeShip backstory.
       </p>
       <h2>Take a TimeShip Test Trip</h2>
       <ul>
@@ -22,15 +22,10 @@ const RubysTimeShipPage = () => {
           </a>
         </li>
         <li>
-        <a href="/api/time-ship?city=London&year=1554&price=333">
-          /api/time-ship?city=London&year=1554&price=333
+        <a href="/api/time-ship?city=London&year=1554&price=111">
+          /api/time-ship?city=LondonBridge&year=1554&price=111
         </a>
       </li>
-      <li>
-      <a href="/api/time-ship?city=London&year=1554&price=333">
-        /api/time-ship?city= _ _ _ _ &year= _ _ _ _&price=333
-      </a>
-    </li>
       </ul>
       <h2>Build Your Own Gatsby Function TimeShip</h2>
       <p>Clone the code of Ruby's TimeShip and get started:</p>
