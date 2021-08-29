@@ -10,8 +10,8 @@ module.exports = {
     title: "Ruby's TimeShip",
     titleTemplate: "%s ·Built to save Ruby's sister, Princess Lizabeth from prison in the Tower of London",
     description: "Built by Lillian (6 🏴‍☠️👸 ) and by Ola Vea (43 🦇😺 ) with ❤️ and gatsby functions",
-    siteUrl: `https://rubystimeshipstripe.gatsbyjs.io/`,
-    url: `https://rubystimeshipstripe.gatsbyjs.io/`,
+    siteUrl: `https://timeship.gatsbyjs.io/`,
+    url: `https://timeship.gatsbyjs.io/`,
     image: "/images/icon.png", // Get my OlaVea iconPath to your image you placed in the 'static' folder
     twitter: "@olaholstvea",
   },

@@ -5,14 +5,14 @@ const RubysTimeShipPage = () => {
     <main>
       <header>
         <h1>Ruby's TimeShip</h1>
-        <h2>by Lillian (6 🏴‍☠️👸 )</h2>
+        <h2>by Lillian (6 <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="pirate princess">👸</span> )</h2>
       </header>
-      <p>and Ola Vea (43 🏴‍☠️😺 )</p>
+      <p>and Ola Vea (43 <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="smiley cat">😺</span> )</p>
       <h2>Ruby's TimeShip</h2>
       <p>
         Is a serverless Gatsby function fueled by gold.
-        Ruby built her TimeShip in 1554 so she can go to the future and find The Pirate Princess Lilly (11 🏴‍☠️👸 ). Lilly will help save Ruby's sister, Princess Lizabeth from prison in the Tower of London back in 1554.
-        You can help in The Jailbreak by donating time, talent or treasure. Each time travel trip will cost you $XXX in gold-fuel. ( 🏴‍☠️😺👍 $XXX are free-test-$s)
+        Ruby built her TimeShip in 1554 so she can go to the future and find The Pirate Princess Lilly (11 <span role="img" aria-label="pirate flag">🏴‍☠️</span><span role="img" aria-label="pirate princess">👸</span> ). Lilly will help save Ruby's sister, Princess Lizabeth from prison in the Tower of London back in 1554.
+        You can help in The Jailbreak by donating time, talent or treasure. Each time travel trip will cost you $XXX in gold-fuel. ( <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="smiley cat">😺</span> <span role="img" aria-label="thumbs up">👍</span> $XXX are free-test-$s)
       </p>
       <h2>Take a TimeShip Test Trip</h2>
       <ul>

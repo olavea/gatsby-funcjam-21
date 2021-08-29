@@ -54,7 +54,7 @@ export default async function handler(req, res) {
         console.error(error.message);
         // if something went wrong
         res.status(500).json({
-            message: `Faulty 🗼 TimeShip`,
+            message: `Faulty TimeShip`,
         });
     }
 }
