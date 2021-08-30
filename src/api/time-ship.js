@@ -1,20 +1,19 @@
-// The PiRATE_PRiNCESS we are looking to team up with
+// The PiRATE_PRiNCESS we are looking for to team up with
 const PiRATE_PRiNCESS = {
     age: "11",
     hairColor: "gold",
     skill: "gatsby_function_programming"
 }
-// STRIPE_KEY
 const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 async function timeShipHandler(req, res) {
     // Get the data from the query of req-the-bat 🦇
-    const { city, year, price } = req.query;
+    const { city, year, price, cancelUrl } = req.query;
     // Create a Stripe checkout session
     // Copy / paste from stripe docs node.js thing
     const session = await stripe.checkout.sessions.create({
-        success_url: `https://timeship.gatsbyjs.io/api/time-ship-landing-in?city=${city}&year=${year}&price=333${price}`,
-        cancel_url: 'https://timeship.gatsbyjs.io/cancel',
+        success_url: `https://timeship.gatsbyjs.io/api/time-ship-landing-in?city=${city}&year=${year}&price=333${price}&session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: "http://localhost:8000/?payment=cancelled",
         payment_method_types: ['card'],
         line_items: [
             {
@@ -26,19 +25,13 @@ async function timeShipHandler(req, res) {
                 },
                 quantity: 1,
             },
-
-
         ],
         mode: 'payment',
       });
-    //   // Get the url to send back to Ruby's TimeShip
+      // Get the url to send back to Ruby's TimeShip
       // Give the data to res-the-cat 😺 and
-      // then the TimeShip is on a test trip! With you inside it!
-      //urlTimeShip: session.url,
       res.status(200).json({
-
         message: `Copy this url into the browser, to test-pay $${price} for TimeShip gold-fuel ( 🏴‍☠️😺👍 $${price} are free-test-$s). ${session.url}`,
-
     });
 }
 
