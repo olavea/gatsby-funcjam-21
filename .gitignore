@@ -1,7 +1,3 @@
-# Queen Benedicte Raae's .env.variables
-.env.*
-!.env.example
-
 # Logs
 logs
 *.log
