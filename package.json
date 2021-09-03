@@ -14,7 +14,8 @@
     "pirate princess",
     "pirate show",
     "Queen Benedicte @raae"
-  ],  "scripts": {
+  ],
+  "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
@@ -26,8 +27,10 @@
     "gatsby": "^3.12.1",
     "gatsby-plugin-gatsby-cloud": "^3.0.0",
     "gatsby-plugin-manifest": "^3.12.0",
+    "query-string": "^7.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-hook-form": "^7.5.2"
+    "react-hook-form": "^7.5.2",
+    "stripe": "^8.171.0"
   }
 }

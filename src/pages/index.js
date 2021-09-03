@@ -1,81 +1,64 @@
-import React from "react"
-import { useForm } from "react-hook-form"
+import React, {  useState, useEffect } from 'react';
+import queryString from "query-string";
 
-export default function App() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm()
-  const onSubmit = data => {
-    fetch(`/api/form`, {
-      method: `POST`,
-      body: JSON.stringify(data),
-      headers: {
-        "content-type": `application/json`,
-      },
-    })
-      .then(res => res.json())
-      .then(body => {
-        console.log(`response from API:`, body)
-      })
-  }
-
-  console.log({ errors })
+const RubysTimeShipPage = ({ location }) => {
+  const [status, setStatus] = useState("initial");
+  useEffect(() => {
+    const params = queryString.parse(location.search);
+    if(params.payment === "cancelled") {
+      setStatus("cancelled");
+    }
+  }, [location.search]);
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      style={{ display: `block`, width: 400 }}
-    >
-      <label htmlFor="first-name">First name</label>
-      <input
-        id="first-name"
-        type="text"
-        style={{ display: `block`, marginBottom: 16 }}
-        {...register("First name", { required: true, maxLength: 80 })}
-      />
-
-      <label htmlFor="last-name">Last name</label>
-      <input
-        id="last-name"
-        type="text"
-        style={{ display: `block`, marginBottom: 16 }}
-        {...register("Last name", { required: true, maxLength: 100 })}
-      />
-
-      <label htmlFor="email">Email</label>
-      <input
-        id="email"
-        type="text"
-        style={{ display: `block`, marginBottom: 16 }}
-        {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
-      />
-
-      <label htmlFor="tel">Mobile number</label>
-      <input
-        id="tel"
-        type="tel"
-        style={{ display: `block`, marginBottom: 16 }}
-        {...register("Mobile number", {
-          required: true,
-          minLength: 6,
-          maxLength: 12,
-        })}
-      />
-
-      <label htmlFor="title">Title</label>
-      <select
-        {...register("Title", { required: true })}
-        style={{ display: `block`, marginBottom: 16 }}
-      >
-        <option value="Mr">Mr</option>
-        <option value="Mrs">Mrs</option>
-        <option value="Miss">Miss</option>
-        <option value="Dr">Dr</option>
-      </select>
-
-      <input type="submit" />
-    </form>
+    <main>
+      <header>
+        <h1>Ruby's TimeShip</h1>
+        <h2>by Lillian (6 <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="pirate princess">👸</span> )</h2>
+      </header>
+      <p>and Ola Vea (43 <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="smiley cat">😺</span> )</p>
+      <h2>
+          {status === "cancelled"
+              ?
+              <>You cancelled.... Try Another Test Trip On Ruby's TimeShip?</>
+              :
+              <>Take a Test Trip On Ruby's TimeShip</>
+          }
+      </h2>
+      <ul>
+        <li>
+          <a href="/api/time-ship?city=oslo&year=2026&price=333">
+            /api/time-ship?city=oslo&year=2026&price=333
+          </a>
+        </li>
+        <li>
+        <a href="/api/time-ship?city=London&year=1554&price=111">
+          /api/time-ship?city=LondonBridge&year=1554&price=111
+        </a>
+      </li>
+      </ul>
+      <h2>Ruby's TimeShip</h2>
+      <p>
+        Is a serverless Gatsby function fueled by gold.
+        Ruby Reckless built her TimeShip in 1554. So she can go to the future and find The Pirate Princess Lilly (11 <span role="img" aria-label="pirate flag">🏴‍☠️</span><span role="img" aria-label="pirate princess">👸</span> ). Lilly will help save Ruby's sister, Princess Lizabeth from prison in the Tower of London back in 1554.
+        You can help in The Tower Jailbreak by donating time, talent or treasure. Each time travel trip will cost you $XXX in gold-fuel. ( <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="smiley cat">😺</span> <span role="img" aria-label="thumbs up">👍</span> $XXX are free-test-$s). Use your best email to get Ruby's TimeShip backstory.
+      </p>
+      <h2>Build Your Own Gatsby Function TimeShip</h2>
+      <p>Clone the code of Ruby's TimeShip and get started:</p>
+      <ul>
+        <li>
+          <a href="https://github.com/lillian-raae-vea/go-gatsby-funcjam-21">https://github.com/lillian-raae-vea/go-gatsby-funcjam-21</a>
+        </li>
+      </ul>
+      <h2>Or Bring Your Own Idea to a Gatsby Function</h2>
+      <p>Fabulous prizes await the winners of the FuncJam, .... </p>
+      <ul>
+        <li>
+          <a href="https://www.gatsbyjs.com/func-jam-21/">like an M1 Mac Miniiiiii....</a>
+        </li>
+      </ul>
+    </main>
   )
 }
+
+export default RubysTimeShipPage
