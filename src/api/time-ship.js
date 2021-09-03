@@ -17,9 +17,8 @@ async function timeShipHandler(req, res) {
         payment_method_types: ['card'],
         line_items: [
             {
-                // price data object in stripe docs
                 price_data: {
-                    unit_amount: req.query.price * 100,
+                    unit_amount: price * 100,
                     currency: "usd",
                     product: "prod_K7EsOmDy6JLRgx",
                 },
