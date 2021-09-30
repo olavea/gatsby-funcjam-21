@@ -5,6 +5,9 @@ Ruby Reckless built her TimeShip in 1554. So she can go to the future and find T
 
 You can help in The Tower Jailbreak by donating time, talent or treasure. Each time travel trip will cost you $XXX in gold-fuel. ( <span role="img" aria-label="pirate flag">🏴‍☠️</span> <span role="img" aria-label="smiley cat">😺</span> <span role="img" aria-label="thumbs up">👍</span> $XXX are free-test-$s)
 
+## Stripe
+Lillian (6 🏴‍☠️👸 ) and Ola Vea (43 🏴‍☠️😺 ) use Stripe with a GET request and Queen Raae's home made `price_data: {} ` object to get pay-what-you-want.
+
 ## The Tower Jailbreak Donation Checklist
 
 - [ ] Use your best email to get Ruby's TimeShip backstory.
